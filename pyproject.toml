@@ -1,0 +1,48 @@
+[build-system]
+requires = ["setuptools>=69", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "llama-index-coockbook"
+version = "0.1.0"
+description = "Notebook-based LlamaIndex cookbook examples"
+requires-python = ">=3.10,<3.14"
+license = { file = "LICENSE" }
+authors = [
+  { name = "Contributors" }
+]
+dependencies = [
+  "ipython>=8.18,<10",
+  "langchain>=0.3.0,<0.4",
+  "llama-index-core==0.14.14",
+  "llama-index-embeddings-langchain==0.4.1",
+  "llama-index-llms-openai==0.6.18",
+  "llama-index-retrievers-bm25==0.6.5",
+  "llama-index-vector-stores-postgres==0.7.3",
+  "nest-asyncio>=1.6,<2",
+  "openai>=1.109,<3",
+  "psycopg2-binary>=2.9.9,<3",
+  "python-dotenv>=1.0,<2",
+  "sentence-transformers>=2.5,<6"
+]
+
+[project.optional-dependencies]
+notebooks = [
+  "ipykernel>=6.29,<7",
+  "jupyterlab>=4.2,<5"
+]
+
+local-llm = [
+  "llama-index-llms-llama-cpp==0.5.1"
+]
+
+rerank = [
+  "llama-index-postprocessor-colbert-rerank==0.4.1"
+]
+
+legacy = [
+  "llama-index-question-gen-openai==0.3.1"
+]
+
+[tool.setuptools]
+py-modules = []
